@@ -1,5 +1,7 @@
 'use strict';
 
+// alert("Rules :\n1) Current Score gets wasted if 1 comes on the dice. \n2) By pressing hold the current score is added to the total score and the turn is shifted to next user. \n3) The user reaching first to hundred wins the game")
+
 //Selecting Elements-------------------------------------------
 const score0El = document.querySelector("#score--0");
 const score1El = document.querySelector("#score--1");
@@ -7,10 +9,14 @@ const diceImgEl = document.querySelector(".dice");
 const btnRoll = document.querySelector(".btn--roll");
 const btnNew = document.querySelector(".btn--new");
 const btnHold = document.querySelector(".btn--hold");
+const btnRules = document.querySelector(".btn--rules");
 const current0El = document.getElementById("current--0");
 const current1El = document.getElementById("current--1");
 const player0El = document.querySelector(".player--0");
 const player1El = document.querySelector(".player--1");
+const rulesEl = document.querySelector(".rules");
+const overlayEl = document.querySelector(".overlay");
+const btnCloseRules = document.querySelector(".closeRules");
 
 //Starting Conditions-------------------------------------------
 
@@ -44,6 +50,14 @@ function play1() {
     audio1.currentTime = 0;
     audio1.play();
   }
+
+
+//for closing Rules
+let closeRules = function(){
+    rulesEl.classList.add("hidden");
+    overlayEl.classList.add("hidden");
+}
+
 
 //sound effect when 1 comes
 function play2(){
@@ -120,3 +134,13 @@ btnNew.addEventListener("click", function () {
     activePlayer = 0;
 
 })
+
+
+btnRules.addEventListener("click", function(){
+    rulesEl.classList.remove("hidden");
+    overlayEl.classList.remove("hidden");
+})
+
+btnCloseRules.addEventListener("click", closeRules);
+
+overlayEl.addEventListener("click", closeRules);

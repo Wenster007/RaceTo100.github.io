@@ -14,6 +14,16 @@
     <audio src="./sound3.wav" id="audio3"></audio>
     <audio src="./sound4.wav" id="audio4"></audio>
 
+    <div class="overlay hidden"></div>
+
+    <div class="rules hidden">
+      <button class="closeRules">&times;</button>
+      <h3>Rules</h3>
+      <p>1) Current Score gets wasted if 1 comes on the dice.</p>
+      <p>2) By pressing hold the current score is added to the total score and the turn is shifted to next user.</p>
+      <p>3) The user reaching first to hundred wins the game.</p>   
+    </div>
+
     <main>
       <section class="player player--0 player--active">
         <h2 class="name" id="name--0">Player 1</h2>
@@ -36,6 +46,7 @@
       <button class="btn btn--new">🔄 New game</button>
       <button class="btn btn--roll">🎲 Roll dice</button>
       <button class="btn btn--hold">📥 Hold</button>
+      <button class="btn btn--rules">🗣 Rules</button>
     </main>
     <script src="script.js"></script>
   </body>
